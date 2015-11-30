@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Module comparison{% endblock %}
+
+{% block content %}
+  <p class="lead">A comprehensive list of all <span class="text-primary"><b>Drupal 7</b></span> projects and their respective <span class="text-success"><b>Drupal 8</b></span> status.</p>
+  <table class="table table-striped">
+    <thead>
+      <tr>{% for key,value in headers %}<th>{{ value }}</th>{% endfor %}</tr>
+    </thead>
+    {% for row in list.fetch() %}
+      <tr>
+        <td>{{ row[0] }}</td>
+        <td>{{ row[1] }}</td>
+        {% if row[2] == '' %}
+          <td class="bg-danger">
+        {% elseif row[2] == 'In progress' %}
+          <td class="bg-warning">
+        {% else %}
+          <td class="bg-success">
+        {% endif %}
+          {{ row[2] }}
+        </td>
+        <td><a href="{{ row[3] }}" rel="external" target="_blank">{{ row[3] }} <i class="glyphicon glyphicon-new-window"></i></a></td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

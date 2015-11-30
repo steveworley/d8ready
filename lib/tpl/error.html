@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block title %}Oops! Something went wrong{% endblock %}
+
+{% block content %}
+  <div class="alert alert-danger">
+    {{ message.getMessage() }}
+  </div>
+{% endblock %}

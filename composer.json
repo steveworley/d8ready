@@ -1,0 +1,21 @@
+{
+    "name": "stevenworley/d8ready",
+    "description": "Compatibility test for Drupal 7 modules",
+    "require": {
+        "sneakybobito/google-url": "^1.0",
+        "league/csv": "^7.2",
+        "guzzlehttp/guzzle": "^6.1",
+        "symfony/dom-crawler": "^2.7",
+        "symfony/css-selector": "^2.7",
+        "kevinlebrun/colors.php": "^0.4.1"
+    },
+    "autoload": {
+        "psr-4": {"D8Ready\\": "src/"}
+    },
+    "authors": [
+        {
+            "name": "Steve Worley",
+            "email": "sj.worley88@gmail.com"
+        }
+    ]
+}
